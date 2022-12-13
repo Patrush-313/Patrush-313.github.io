@@ -1,181 +1,358 @@
+/* パソコン用 */
+@media screen and (min-width: 769px) {
+  body {
+    font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝',
+      'MS PMincho', serif;
+    width: auto;
+    margin: 0 auto;
+    color: black;
+
+    background-image: url(../img/shopView1.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  h1 {
+    letter-spacing: 3px;
+    margin-top: 64px;
+  }
+
+  p {
+    letter-spacing: 1.5px;
+  }
+
+  /* header */
+
+  header button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    line-height: 0.5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+
+    border: none;
+    color: white;
+    background: none;
+    font-size: 120px;
+  }
+
+  /* main */
+  main {
+    text-align: center;
+  }
+
+  main [src*='lamp'] {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* top */
+  .top [src*='back'] {
+    width: 100%;
+  }
+
+  .top {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+
+  .top [src*='storeIcon1'] {
+    width: 24px;
+    margin-bottom: 18px;
+  }
+
+  .top [src*='storeIcon2'] {
+    width: 24px;
+    margin-bottom: 18px;
+  }
+
+  .top h1 {
+    font-size: 48px;
+    font-weight: 1;
+  }
+
+  .top p {
+    font-size: 18px;
+    font-weight: 1;
+  }
+
+  /* contents */
+  .contents {
+    margin-top: 240px;
+  }
+
+  .contents [src*='main_photo'] {
+    margin-top: 60px;
+    object-fit: cover;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+  }
+
+  .sub_contents {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sub_contents img {
+    margin: 40px 15px;
+    width: 50vw;
+    height: auto;
+  }
+
+  /* contents_fin */
+
+  .contents_fin {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contents_fin [src*='icon1'] {
+    width: 100px;
+    margin-bottom: 18px;
+  }
+
+  .contents_fin [src*='icon2'] {
+    width: 100px;
+    margin-bottom: 18px;
+  }
+
+  .link {
+    display: flex;
+    justify-content: end;
+    background-color: aqua;
+  }
+
+  .link [src*='instagram'] {
+    width: 24px;
+    height: 24px;
+    margin: 0 12px;
+  }
+
+  /* footer */
+  footer {
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .other {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .other h2 {
+    font-weight: normal;
+    font-size: 20px;
+  }
+
+  .other a {
+    margin-left: 12px;
+    color: black;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+
+  .other a:hover {
+    color: lightgray;
+    transition: 0.1s;
+  }
+
+  .attention {
+    margin: 64px 0 32px;
+    font-size: 8px;
+    color: lightgray;
+    line-height: 1.5;
+  }
+}
+
+/* タブレット用 */
+@media only screen and (min-width: 641px) and (max-width: 960px) {
+  /*ここに通常のCSSを入れる*/
+}
+
+/* スマートフォン用 */
+@media screen and (max-width: 640px) {
+  body {
+    font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝',
+      'MS PMincho', serif;
+    width: auto;
+    margin: 0 auto;
+    color: black;
+  }
+
+  h1 {
+    letter-spacing: 3px;
+    margin-top: 64px;
+  }
+
+  p {
+    letter-spacing: 1.5px;
+  }
+
+  /* header */
+
+  header button {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    line-height: 0.5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
+
+    border: none;
+    color: white;
+    background: none;
+    font-size: 36px;
+  }
+
+  /* main */
+
+  main {
+    text-align: center;
+    z-index: 0;
+  }
+
+  /* top */
+  .top [src*='back'] {
+    width: 100%;
+  }
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+  }
+
+  .top [src*='shopView1'] {
+    width: 256%;
+    margin-bottom: 8px;
+    position: absolute;
+    z-index: -10;
+  }
+
+  .top [src*='storeIcon1'] {
+    width: 80px;
+    margin-top: 128px;
+    margin-bottom: 16px;
+  }
+
+  .top [src*='storeIcon2'] {
+    width: 80px;
+    margin-bottom: 8px;
+  }
+
+  .top h1 {
+    font-size: 18px;
+    line-height: 200%;
+    font-weight: 1;
+  }
+
+  .top p {
+    margin-top: 128px;
+    font-size: 18px;
+    font-weight: 1;
+  }
+
+  /* contents */
+  .contents {
+    margin-top: 240px;
+  }
+
+  .contents [src*='main_photo'] {
+    margin-top: 60px;
+    object-fit: cover;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 50%;
+  }
+
+  .sub_contents {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sub_contents img {
+    margin: 40px 15px;
+    width: 50vw;
+    height: auto;
+  }
+
+  /* contents_fin */
+
+  .contents_fin {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contents_fin [src*='icon1'] {
+    width: 100px;
+    margin-bottom: 18px;
+  }
+
+  .contents_fin [src*='icon2'] {
+    width: 100px;
+    margin-bottom: 18px;
+  }
+
+  .link {
+    display: flex;
+    justify-content: end;
+    background-color: aqua;
+  }
+
+  .link [src*='instagram'] {
+    width: 24px;
+    height: 24px;
+    margin: 0 12px;
+  }
+
+  /* footer */
+  footer {
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .other {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .other h2 {
+    font-weight: normal;
+    font-size: 20px;
+  }
+
+  .other a {
+    margin-left: 12px;
+    color: black;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+
+  .other a:hover {
+    color: lightgray;
+    transition: 0.1s;
+  }
+
+  .attention {
+    margin: 64px 0 32px;
+    font-size: 8px;
+    color: lightgray;
+    line-height: 1.5;
+  }
+}
+
 /* common */
-
-body {
-  font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
-  width: auto;
-  margin: 0 auto;
-  color: black;
-
-  background-image: url(../img/back_ground.jpg);
-  background-size: 100%;
-  background-repeat: no-repeat;
-
-
- 
-}
-
-h1{
-  letter-spacing: 3px;
-  margin-top: 64px;
-}
-
-p{
-  letter-spacing: 1.5px;
-
-}
-
-/* header */
-
-header button{
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  line-height: 0.5;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: lighter;
-
-  border: none;
-  color: white;
-  background: none;
-  font-size: 120px;
-
-}
-
-
-/* main */
-main{
-  text-align: center;
-}
-
-main [src *= "lamp"] {
-  width: 28px;
-  height: 28px;
-}
-
-/* top */
-.top [src *= "back"] {
-  width: 100%;
-}
-
-.top {
-  margin-top: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-}
-
-.top [src*="icon1"] {
-  width: 100px;
-  margin-bottom: 18px;
-}
-
-.top [src*="icon2"] {
-  width: 100px;
-  margin-bottom: 18px;
-}
-
-.top h1 {
-  font-size: 48px;
-  font-weight: 1;
-}
-
-.top p {
-  font-size: 18px;
-  font-weight: 1;
-}
-
-
-/* contents */
-.contents{
-  margin-top: 240px;
-}
-
-.contents [src*="main_photo"] {
-  margin-top: 60px;
-  object-fit: cover;
-  width: 40vw;
-  height: 40vw;
-  border-radius: 50%;
-
-}
-
-.sub_contents{
-  display: flex;
-  justify-content: center;
-}
-
-.sub_contents img{
-  margin: 40px 15px;
-  width: 50vw;
-  height: auto;
-}
-
-
-/* contents_fin */
-
-.contents_fin {
-  margin-top: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contents_fin [src*="icon1"] {
-  width: 100px;
-  margin-bottom: 18px;
-}
-
-.contents_fin [src*="icon2"] {
-  width: 100px;
-  margin-bottom: 18px;
-}
-
-.link{
-  display: flex;
-  justify-content: end;
-  background-color: aqua;
-}
-
-.link [src*="instagram"]{
-width: 24px;
-height: 24px;
-margin: 0 12px;
-}
-
-/* footer */
-footer{
-  margin-top: 60px;
-  text-align: center;
-}
-
-
-.other{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.other h2{
-  font-weight: normal;
-  font-size: 20px;
-}
-
-.other a {
-  margin-left: 12px;
-  color: black;
-  text-decoration: none;
-  transition: 0.5s;
-}
-
-.other a:hover{
-  color: lightgray;
-  transition: 0.1s;
-}
-
-.attention {
-  margin: 64px 0 32px;
-  font-size: 8px;
-  color: lightgray;
-  line-height: 1.5;
-}
