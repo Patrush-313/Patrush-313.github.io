@@ -182,7 +182,7 @@
   body {
     font-family: 'ヒラギノ明朝 Pro W1', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝',
       'MS PMincho', serif;
-    width: auto;
+    /* width: auto; */
     margin: 0 auto;
     color: black;
   }
@@ -211,7 +211,7 @@
     width: 16%;
     text-align: center;
   }
-  /* 
+
   .sidebar [type='button'] {
     vertical-align: top;
     width: 100%;
@@ -223,22 +223,27 @@
     border: none;
     color: white;
     background: none;
-  } */
+  }
 
   .sidebar [type='button']:hover {
     background-color: blue;
   }
 
   .sidebar p {
+    font-weight: lighter;
     margin: 0;
     position: fixed;
     width: 16%;
     font-size: 12px;
-    top: 50%;
+    top: 40%;
     left: 0%;
+    line-height: 0.7;
   }
 
   .sidebar p span {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: inline-block;
     transform: rotate(90deg);
   }
 
@@ -296,6 +301,21 @@
     margin-top: 50%;
   }
 
+  .contents [src*='shopView17'] {
+    width: 100%;
+    height: -webkit-calc(100% * 1536 /2049);
+    height: calc(100% * 1536 /2049);
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .window {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
   .sub_contents {
     display: flex;
     justify-content: center;
@@ -340,7 +360,10 @@
 
   /* footer */
   footer {
+    height: auto;
+    width: 84%;
     margin-top: 60px;
+    margin-left: 16%;
     text-align: center;
   }
 
