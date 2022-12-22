@@ -182,7 +182,7 @@
   body {
     font-family: 'ヒラギノ明朝 Pro W1', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝',
       'MS PMincho', serif;
-    /* width: auto; */
+    width: 100vw;
     margin: 0 auto;
     color: black;
   }
@@ -305,7 +305,6 @@
 
   .contents [src*='shopView17'] {
     width: 100%;
-
     object-fit: cover;
     border-radius: 50%;
   }
@@ -320,11 +319,16 @@
   .sub_contents {
     display: flex;
     justify-content: center;
+    overflow: hidden;
+  }
+
+  .sub_contents span {
+    display: none;
   }
 
   .sub_contents img {
     margin: 40px 15px;
-    width: 50vw;
+    width: 150%;
     height: auto;
   }
 
