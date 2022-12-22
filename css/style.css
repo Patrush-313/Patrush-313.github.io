@@ -202,14 +202,14 @@
   header {
     height: 100%;
     width: 100%;
-    position: fixed;
   }
-
+  
   /* sidebar */
   .sidebar {
     height: 100%;
     width: 16%;
     text-align: center;
+    position: fixed;
   }
 
   .sidebar [type='button'] {
