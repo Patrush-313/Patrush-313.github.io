@@ -213,6 +213,8 @@
   }
 
   .sidebar [type='button'] {
+    margin-left: 0;
+    padding-left: 0;
     vertical-align: top;
     width: 100%;
     padding-bottom: 100vh;
@@ -230,9 +232,9 @@
   }
 
   .sidebar p {
+    position: fixed;
     font-weight: lighter;
     margin: 0;
-    position: fixed;
     width: 16%;
     font-size: 12px;
     top: 40%;
@@ -303,10 +305,9 @@
 
   .contents [src*='shopView17'] {
     width: 100%;
-    height: -webkit-calc(100% * 1536 /2049);
-    height: calc(100% * 1536 /2049);
-    border-radius: 50%;
+
     object-fit: cover;
+    border-radius: 50%;
   }
 
   .window {
