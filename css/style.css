@@ -209,8 +209,19 @@
   /* sidebar */
   .sidebar {
     height: 100%;
-    width: 16%;
+    width: 16vw;
     text-align: center;
+    /* position: absolute; */
+  }
+
+  .sideBarMask {
+    position: absolute;
+    /* top: -100vh; */
+    width: 100%;
+    height: 100%;
+    background-color: lightgray;
+    z-index: 0;
+    /* opacity: 0; */
   }
 
   .sidebar [type='button'] {
@@ -233,7 +244,7 @@
     background-color: blue;
   }
 
-  .sidebarShopName p {
+  .sidebar .sidebarShopName p {
     position: absolute;
     font-weight: lighter;
     width: 16%;
@@ -241,6 +252,7 @@
     font-size: 13px;
     text-align: center;
     top: 35vh;
+    left: 0;
     line-height: 0.65;
   }
 
