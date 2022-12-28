@@ -211,7 +211,7 @@
     height: 100%;
     width: 16vw;
     text-align: center;
-    /* position: absolute; */
+    position: absolute;
   }
 
   .sideBarMask {
@@ -228,7 +228,7 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 16%;
+    width: 100%;
     padding-bottom: 100vh;
     font-size: 50px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
@@ -247,7 +247,7 @@
   .sidebar .sidebarShopName p {
     position: absolute;
     font-weight: lighter;
-    width: 16%;
+    width: 100%;
     height: 100%;
     font-size: 13px;
     text-align: center;
