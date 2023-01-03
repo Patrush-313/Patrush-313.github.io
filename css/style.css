@@ -93,12 +93,12 @@
     border-radius: 50%;
   }
 
-  .sub_contents {
+  .subContents {
     display: flex;
     justify-content: center;
   }
 
-  .sub_contents img {
+  .subContents img {
     margin: 40px 15px;
     width: 50vw;
     height: auto;
@@ -106,30 +106,30 @@
 
   /* contents_fin */
 
-  .contents_fin {
+  .contentsFin {
     margin-top: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .contents_fin [src*='icon1'] {
+  .contentsFin [src*='icon1'] {
     width: 100px;
     margin-bottom: 18px;
   }
 
-  .contents_fin [src*='icon2'] {
+  .contentsFin [src*='icon2'] {
     width: 100px;
     margin-bottom: 18px;
   }
 
-  .link {
+  .instagramLink {
     display: flex;
     justify-content: end;
     background-color: aqua;
   }
 
-  .link [src*='instagram'] {
+  .instagramLink [src*='instagram'] {
     width: 24px;
     height: 24px;
     margin: 0 12px;
@@ -194,9 +194,15 @@
   }
 
   p {
-    width: 60%;
     letter-spacing: 1.5px;
     line-height: 2;
+  }
+
+  img[src*='lamp.png'] {
+    width: 20px;
+    height: 20px;
+    rotate: 180deg;
+    margin: 0.3em 0;
   }
 
   /* header */
@@ -212,6 +218,15 @@
     width: 16vw;
     text-align: center;
     position: absolute;
+  }
+
+  .sidebarDelimiter {
+    position: absolute;
+    top: 0;
+    width: 99%;
+    height: 22px;
+    border-right: 1px solid grey;
+    z-index: 5;
   }
 
   .sideBarMask {
@@ -237,7 +252,7 @@
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: lighter;
     border: none;
-    color: red;
+    color: grey;
     background: none;
     z-index: 3;
   }
@@ -321,7 +336,13 @@
 
   .siteMenu nav .inner li {
     margin: 0;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgb(235, 235, 235);
+  }
+
+  .siteMenu nav .inner li [src*='lamp'] {
+    margin: 0 6px 0 0;
+    width: 12px;
+    height: 12px;
   }
 
   .siteMenu nav .inner li a {
@@ -384,17 +405,31 @@
   }
 
   /* contents */
-  .contents {
+  [class*='contents'] {
     width: 84%;
     margin-left: 16%;
-    margin-top: 50%;
+    margin-top: 28%;
     z-index: 0;
   }
 
-  .contents [src*='shopView17'] {
-    width: 100%;
+  [class*='contents'] h1 {
+    font-size: 24px;
+    letter-spacing: 0.2em;
+  }
+
+  [class*='contents'] p {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+  }
+
+  /* contents1 */
+
+  .contents1 [src*='shopView17'] {
+    width: 110%;
     object-fit: cover;
     border-radius: 50%;
+    margin: 10% 0;
   }
 
   .window {
@@ -405,48 +440,81 @@
     z-index: -1;
   }
 
-  .sub_contents {
+  /* contents2 */
+
+  .subContents {
     display: flex;
-    justify-content: center;
+    /* justify-content: start; */
     overflow: hidden;
+    margin: 5% 0 0 5%;
+    width: 90%;
   }
 
-  .sub_contents span {
+  .subContents span {
     display: none;
   }
 
-  .sub_contents img {
-    margin: 40px 15px;
-    width: 150%;
-    height: auto;
+  .subContents img {
+    width: 200%;
   }
 
-  /* contents_fin */
+  .subContentsCount {
+    margin: 0 0 8% 5%;
+    text-align: start;
+  }
 
-  .contents_fin {
-    margin-top: 120px;
+  /* contents3 */
+
+  .instagramContents {
+    margin-top: 16px;
+  }
+
+  .instagramContents [src*='instagramContents'] {
+    width: 90%;
+  }
+
+  .instagramContentsCount {
+    margin: 0 0 8% 5%;
+    text-align: start;
+  }
+
+  /* contentsFin */
+
+  .contentsFin {
+    width: 100%;
+    margin: 90px 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .contents_fin [src*='icon1'] {
-    width: 100px;
-    margin-bottom: 18px;
+  .contentsFin [src*='Icon1'] {
+    width: 32px;
+    margin-bottom: 8px;
   }
 
-  .contents_fin [src*='icon2'] {
-    width: 100px;
-    margin-bottom: 18px;
+  .contentsFin [src*='Icon2'] {
+    width: 32px;
+    margin-bottom: 8px;
   }
 
-  .link {
+  .contentsFin p {
+    font-size: 10px;
+  }
+
+  .instagramLink {
     display: flex;
-    justify-content: end;
-    background-color: aqua;
+    flex-direction: row;
   }
 
-  .link [src*='instagram'] {
+  .instagramLink a {
+    margin-top: 24px;
+    text-decoration: none;
+    color: #333;
+    transition-duration: 0.2s;
+  }
+
+  .instagramLink [src*='instagram'] {
     width: 24px;
     height: 24px;
     margin: 0 12px;
@@ -455,37 +523,64 @@
   /* footer */
   footer {
     height: auto;
-    width: 84%;
+    width: 100%;
     margin-top: 60px;
-    margin-left: 16%;
     text-align: center;
   }
 
   .other {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 84%;
+    font-size: 14px;
+    margin: 16% 0 0 16%;
+    text-align: start;
+  }
+
+  .hr {
+    width: 80%;
+    margin-bottom: 64px;
+    color: lightgray;
   }
 
   .other h2 {
+    margin-left: 10%;
+    margin-bottom: 24px;
+    width: 100%;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .other nav {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .other nav .inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .other nav .inner li {
+    margin: 0;
+    border-bottom: 1px solid rgb(235, 235, 235);
+  }
+
+  .other nav .inner li [src*='lamp'] {
+    margin: 0 6px 0 0;
+    width: 12px;
+    height: 12px;
   }
 
   .other a {
-    margin-left: 12px;
-    color: black;
+    display: block;
     text-decoration: none;
-    transition: 0.5s;
-  }
-
-  .other a:hover {
-    color: lightgray;
-    transition: 0.1s;
+    color: #333;
+    padding: 1rem 1rem 1rem 0;
+    transition-duration: 0.2s;
   }
 
   .attention {
-    margin: 64px 0 32px;
+    margin: 64px 0 0;
     font-size: 8px;
     color: lightgray;
     line-height: 1.5;
