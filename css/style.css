@@ -271,6 +271,7 @@
     top: 35vh;
     left: 0;
     line-height: 0.65;
+    /* opacity: 0; */
   }
 
   .sidebarShopName p span {
@@ -425,19 +426,19 @@
 
   /* contents1 */
 
-  .contents1 [src*='shopView17'] {
-    width: 110%;
-    object-fit: cover;
-    border-radius: 50%;
-    margin: 10% 0;
-  }
-
   .window {
     overflow: hidden;
     width: 100%;
     height: 100%;
     position: relative;
     z-index: -1;
+  }
+
+  .contents1 [src*='shopView17'] {
+    width: 110%;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 10% 0;
   }
 
   /* contents2 */
@@ -544,7 +545,7 @@
   .other h2 {
     margin-left: 10%;
     margin-bottom: 24px;
-    width: 100%;
+    width: auto;
     font-weight: normal;
     font-size: 18px;
   }
@@ -580,6 +581,7 @@
   }
 
   .attention {
+    text-align: center;
     margin: 64px 0 0;
     font-size: 8px;
     color: lightgray;
