@@ -198,18 +198,12 @@
     line-height: 2;
   }
 
-  img[src*='lamp.png'] {
-    width: 20px;
-    height: 20px;
-    rotate: 180deg;
-    margin: 0.3em 0;
-  }
-
   /* header */
   header {
     height: 100vh;
     width: 100vw;
     position: fixed;
+    z-index: 20;
   }
 
   /* sidebar */
@@ -218,25 +212,35 @@
     width: 16vw;
     text-align: center;
     position: absolute;
+    z-index: 30;
+    /* 透明度 */
+    /* opacity: 0; */
+  }
+
+  .sideBarMask {
+    background-color: rgb(235, 235, 235);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* z-index: 40; */
+    /* 透明度 */
+    /* opacity: 0; */
   }
 
   .sidebarDelimiter {
     position: absolute;
     top: 0;
-    width: 99%;
+    width: 100%;
     height: 22px;
-    border-right: 1px solid lightgrey;
-    z-index: 5;
+    border-right: 1px solid rgb(235, 235, 235);
+    /* z-index: 40; */
   }
 
-  .sideBarMask {
+  .sideBarContents {
     position: absolute;
-    /* top: -100vh; */
     width: 100%;
     height: 100%;
-    background-color: rgb(230, 230, 230);
-    z-index: 0;
-    opacity: 0;
+    /* z-index: 40; */
   }
 
   .sidebar [type='button1'] {
@@ -255,7 +259,6 @@
     border: none;
     color: grey;
     background: none;
-    z-index: 3;
   }
 
   .sidebar [type='button2'] {
@@ -274,10 +277,10 @@
     border: none;
     color: grey;
     background: none;
-    z-index: 3;
   }
 
   .sidebar [type='button1']:hover {
+    /* position: absolute; */
     background-color: blue;
   }
 
@@ -308,20 +311,19 @@
     /* left: -100vw; */
     width: 100vw;
     transition: all 0.5s;
-    z-index: 3;
+    z-index: 20;
+    /* 透明度 ONOFFでSiteMenuの表示*/
     /* opacity: 0; */
   }
 
   .siteMenuMask {
     position: absolute;
-    margin-left: 16%;
     top: 0;
     left: 0;
     /* left: -100vw; */
     width: 100vw;
     height: 100vh;
     background-color: white;
-    z-index: -1;
     /* opacity: 0; */
   }
 
@@ -329,24 +331,38 @@
     padding-bottom: 2rem;
     padding-left: 1rem;
     font-size: 12px;
-    width: 72%;
+    width: 64%;
   }
 
-  .siteMenu .siteMenuTop {
-    margin-left: 18%;
-    display: flex;
+  .siteMenuContents {
+    position: absolute;
+    width: 79%;
+    margin-left: 16%;
+    display: block;
   }
 
-  .siteMenu .siteMenuTop [src*='store'] {
+  .siteMenuContents img[src*='lamp.png'] {
+    /* z-index: 1; */
+    width: 20px;
+    height: 20px;
+    transform: rotate(180deg);
+    margin: 0.3em 0;
+  }
+
+  .siteMenuContents [src*='store'] {
     width: 22px;
     height: 22px;
     margin-top: 1em;
     margin-right: 4px;
   }
 
+  .siteMenuTop {
+    display: flex;
+  }
+
   .siteMenu nav {
-    margin-left: 18%;
-    width: 78%;
+    /* width: 78%; */
+    margin-left: 5%;
   }
 
   .siteMenu nav .inner ul {
@@ -381,34 +397,40 @@
   /* main */
   main {
     text-align: center;
-    z-index: 0;
+    z-index: 10;
+    position: relative;
+  }
+
+  main img[src*='lamp.png'] {
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    transform: rotate(180deg);
+    margin: 0.3em 0;
   }
 
   /* top */
   .top {
     height: 100vh;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
-  }
-
-  .top [src*='shopView1'] {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: -3;
+    background-image: url(../img/shopView1.jpg);
+    background-size: cover;
   }
 
   .top [src*='storeIcon1'] {
     width: 80px;
     margin-top: 30%;
     margin-bottom: 5%;
+    /* z-index: 10; */
   }
 
   .top [src*='storeIcon2'] {
     width: 80px;
+    /* z-index: 10; */
   }
 
   .top h1 {
@@ -416,6 +438,7 @@
     line-height: 1.8;
     font-weight: 1;
     margin-top: 10%;
+    /* z-index: 10; */
   }
 
   .top p {
@@ -423,6 +446,7 @@
     font-size: 10px;
     font-weight: 1;
     line-height: 180%;
+    /* z-index: 10; */
   }
 
   /* contents */
@@ -430,7 +454,7 @@
     width: 84%;
     margin-left: 16%;
     margin-top: 28%;
-    z-index: 0;
+    /* z-index: 1; */
   }
 
   [class*='contents'] h1 {
@@ -451,7 +475,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    z-index: -1;
+    /* z-index: -1; */
   }
 
   .contents1 [src*='shopView17'] {
@@ -543,7 +567,7 @@
     width: 80%;
     display: flex;
     flex-direction: row;
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(235, 235, 235);
     border-radius: 2%;
     justify-content: center;
     align-items: center;
