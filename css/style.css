@@ -303,12 +303,12 @@
   .siteMenu {
     position: absolute;
     top: 0;
-    /* left: -100vw; */
+    left: -100vw;
     width: 100vw;
     transition: all 0.5s;
     z-index: 20;
     /* 透明度 ONOFFでSiteMenuの表示*/
-    /* opacity: 0; */
+    opacity: 0;
   }
 
   .siteMenuMask {
