@@ -222,9 +222,9 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    /* z-index: 40; */
+    top: -100vh;
     /* 透明度 */
-    /* opacity: 0; */
+    opacity: 0;
   }
 
   .sidebarDelimiter {
@@ -277,11 +277,6 @@
     border: none;
     color: grey;
     background: none;
-  }
-
-  .sidebar [type='button1']:hover {
-    /* position: absolute; */
-    background-color: blue;
   }
 
   .sidebar .sidebarShopName p {
