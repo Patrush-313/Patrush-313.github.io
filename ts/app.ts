@@ -9,7 +9,12 @@ import {
 console.log('Hello, TypeScript!');
 
 // サイトが読み込まれたらサイドバーマスクを表示する
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
+  // webページの最上部に戻る
+  setTimeout(() => {
+    window.scrollTo(0, 0);
+  }, 0);
+
   sideBarMask.style.opacity = '1';
   sideBarMask.style.top = '0';
   sideBarMask.style.transition = 'all 1.5s';
@@ -26,7 +31,6 @@ window.addEventListener('load', () => {
     }, 200);
   }, 1200);
 });
-
 // サイドバーをクリックしたらサイドバーを表示/非表示にする
 sidebar.addEventListener('click', () => {
   if (siteMenuMask.style.opacity === '0') {
@@ -93,20 +97,14 @@ window.addEventListener('scroll', () => {
 const h1Tag = document.querySelector('.contents1 h1') as HTMLElement;
 
 window.addEventListener('scroll', () => {
-  h1Tag.style.transition = 'opacity 3s'; // 0.5秒のトランジションを追加
+  h1Tag.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
 
-  const rect1 = h1Tag.getBoundingClientRect();
-  // console.log('rect: ' + rect1);
-
-  const topOfH1 = rect1.top + window.scrollY;
-  // console.log('window.scrollY: ' + window.scrollY);
+  const topOfH1 = h1Tag.offsetTop;
   console.log('topOfH1: ' + topOfH1);
 
   const triggerPoint = window.innerHeight - window.innerHeight / 10;
 
-  if (topOfH1 >= bottomOfScreen) {
+  if (window.scrollY + triggerPoint >= topOfH1) {
     h1Tag.style.opacity = '1';
-  } else {
-    h1Tag.style.opacity = '0';
   }
 });
