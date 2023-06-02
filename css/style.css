@@ -481,6 +481,14 @@
     opacity: 0;
   }
 
+  .contents1 .contents1-img1 {
+    opacity: 0;
+  }
+
+  .contents1 p {
+    opacity: 0;
+  }
+
   /* contents2 */
 
   .subContents {

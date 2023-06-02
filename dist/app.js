@@ -1,11 +1,8 @@
-import { sidebar, sideBarMask, topImage, siteMenuMask, siteMenuContents, } from './const.js';
+import { sidebar, sideBarMask, topImage, siteMenuMask, siteMenuContents, shopNameP, contents1H1, contents1Img1, contents1P, } from './const.js';
 console.log('Hello, TypeScript!');
+// ------------------------------------------------------------
 // サイトが読み込まれたらサイドバーマスクを表示する
 window.addEventListener('DOMContentLoaded', () => {
-    // webページの最上部に戻る
-    setTimeout(() => {
-        window.scrollTo(0, 0);
-    }, 0);
     sideBarMask.style.opacity = '1';
     sideBarMask.style.top = '0';
     sideBarMask.style.transition = 'all 1.5s';
@@ -21,6 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }, 200);
     }, 1200);
 });
+// ------------------------------------------------------------
 // サイドバーをクリックしたらサイドバーを表示/非表示にする
 sidebar.addEventListener('click', () => {
     if (siteMenuMask.style.opacity === '0') {
@@ -43,6 +41,7 @@ sidebar.addEventListener('click', () => {
     siteMenuMask.style.transition = 'all 1s';
     siteMenuContents.style.transition = 'all 1s';
 });
+// ------------------------------------------------------------
 // topのbackground-imageを左右に動かす
 let currentPosition = 0; // 現在の位置を保存する変数
 let direction = -1; // 動く方向を保存する変数
@@ -63,32 +62,54 @@ const animate = () => {
     requestAnimationFrame(animate);
 };
 animate();
+// ------------------------------------------------------------
 // sidebarのShopNameをスクロールしたら表示する
-const pTag = document.querySelector('.sidebarShopName p');
 const bottomOfScreen = window.innerHeight;
 console.log('bottomOfScreen: ' + bottomOfScreen);
+const rect = shopNameP.getBoundingClientRect();
+console.log('rect: ' + rect);
 window.addEventListener('scroll', () => {
-    pTag.style.transition = 'opacity 0.5s'; // 0.5秒のトランジションを追加
-    const rect = pTag.getBoundingClientRect();
-    console.log('rect: ' + rect);
+    shopNameP.style.transition = 'opacity 0.5s'; // 0.5秒のトランジションを追加
     const topOfP = rect.top + window.scrollY;
     // console.log('topOfP: ' + topOfP);
     if (topOfP >= bottomOfScreen) {
-        pTag.style.opacity = '100';
+        shopNameP.style.opacity = '100';
     }
     else {
-        pTag.style.opacity = '0';
+        shopNameP.style.opacity = '0';
     }
 });
+// ------------------------------------------------------------
 // class="contents1"のh1要素を取得
-const h1Tag = document.querySelector('.contents1 h1');
 window.addEventListener('scroll', () => {
-    h1Tag.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
-    const topOfH1 = h1Tag.offsetTop;
+    contents1H1.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
+    const topOfH1 = contents1H1.offsetTop;
     console.log('topOfH1: ' + topOfH1);
     const triggerPoint = window.innerHeight - window.innerHeight / 10;
     if (window.scrollY + triggerPoint >= topOfH1) {
-        h1Tag.style.opacity = '1';
+        contents1H1.style.opacity = '1';
+    }
+});
+// ------------------------------------------------------------
+// class="contents1"のimg要素を取得
+window.addEventListener('scroll', () => {
+    contents1Img1.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
+    const topOfImg = contents1Img1.offsetTop;
+    console.log('topOfImg: ' + topOfImg);
+    const triggerPoint = window.innerHeight - window.innerHeight / 10;
+    if (window.scrollY + triggerPoint >= topOfImg) {
+        contents1Img1.style.opacity = '1';
+    }
+});
+// ------------------------------------------------------------
+// class="contents1"のimg要素を取得
+window.addEventListener('scroll', () => {
+    contents1P.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
+    const topOfImg = contents1P.offsetTop;
+    console.log('topOfImg: ' + topOfImg);
+    const triggerPoint = window.innerHeight - window.innerHeight / 10;
+    if (window.scrollY + triggerPoint >= topOfImg) {
+        contents1P.style.opacity = '1';
     }
 });
 //# sourceMappingURL=app.js.map
