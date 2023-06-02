@@ -301,25 +301,29 @@
   }
 
   .siteMenu {
-    position: absolute;
     top: 0;
-    left: -100vw;
     width: 100vw;
-    transition: all 0.5s;
     z-index: 20;
     /* 透明度 ONOFFでSiteMenuの表示*/
-    opacity: 0;
+    /* opacity: 1; */
   }
 
   .siteMenuMask {
     position: absolute;
     top: 0;
-    left: 0;
-    /* left: -100vw; */
     width: 100vw;
     height: 100vh;
     background-color: white;
-    /* opacity: 0; */
+    opacity: 1;
+  }
+
+  .siteMenuContents {
+    position: absolute;
+    left: -100%;
+    width: 79%;
+    margin-left: 16%;
+    display: block;
+    opacity: 0;
   }
 
   .siteMenu p {
@@ -327,13 +331,6 @@
     padding-left: 1rem;
     font-size: 12px;
     width: 64%;
-  }
-
-  .siteMenuContents {
-    position: absolute;
-    width: 79%;
-    margin-left: 16%;
-    display: block;
   }
 
   .siteMenuContents img[src*='lamp.png'] {
@@ -478,6 +475,10 @@
     object-fit: cover;
     border-radius: 50%;
     margin: 10% 0;
+  }
+
+  .contents1 h1 {
+    opacity: 0;
   }
 
   /* contents2 */
