@@ -515,7 +515,6 @@
     margin: 0;
     width: auto;
     height: auto;
-    background-color: pink;
   }
 
   .subContents [src*='shopView'] {
@@ -529,8 +528,6 @@
     width: 12px;
     color: rgb(149, 149, 149);
     padding: 0 0.8em;
-    /* transform: rotate(180deg); */
-    background-color: aqua;
   }
 
   #subContentsSpan span {
