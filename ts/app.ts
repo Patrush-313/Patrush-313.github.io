@@ -151,6 +151,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ------------------------------------------------------------
+
 // Snap.svgライブラリへの参照を設定します。
 declare let Snap: any;
 
@@ -169,54 +170,64 @@ const play = () => {
     // 表示するテキストを設定します。
     const logoTitle1 = 'アイウエオ上行';
     const logoTitle2 = 'アイウエオ下行';
-  
+
     // ランダムな文字列を初期化します。
     let logoRandom1 = '';
     let logoRandom2 = '';
-  
+
     // 表示するテキストを設定し、SVG内に中央揃えで配置します。
     // text-anchor属性をmiddleに設定することでテキストを中央揃えします。
-    const logoTitleContainer1: any = l.text('50%', '40%', '').attr({ 'text-anchor': 'middle' });
-    const logoTitleContainer2: any = l.text('50%', '65%', '').attr({ 'text-anchor': 'middle' });
-  
+    const logoTitleContainer1: any = l
+      .text('50%', '40%', '')
+      .attr({ 'text-anchor': 'middle' });
+    const logoTitleContainer2: any = l
+      .text('50%', '65%', '')
+      .attr({ 'text-anchor': 'middle' });
+
     // ランダムな文字列生成のための文字セットを定義します。
-    const possible = "-+*/|}{[]~\\\":;?/.><=+-_)(*&^%$#@!)}";
+    const possible = '-+*/|}{[]~\\":;?/.><=+-_)(*&^%$#@!)}';
 
     // ロゴタイトルの全ての文字についてループします。
-  for (let i = 0; i < logoTitle1.length + 1; i++) {
-    // ロゴタイトルの部分文字列とランダム文字列を組み合わせます。
-    logoRandom1 = logoTitle1.substr(0, i);
-    for (let j = i; j < logoTitle1.length; j++) {
-      // ランダムな文字を追加します。
-      logoRandom1 += possible.charAt(Math.floor(Math.random() * possible.length));
-    }
-    // ランダムなタイトルを生成します。
-    generateRandomTitle(i, logoRandom1, logoTitleContainer1);
-  }
-
-  setTimeout(() => {
-    for (let i = 0; i < logoTitle2.length + 1; i++) {
-      logoRandom2 = logoTitle2.substr(0, i);
-      for (let j = i; j < logoTitle2.length; j++) {
-        logoRandom2 += possible.charAt(Math.floor(Math.random() * possible.length));
+    for (let i = 0; i < logoTitle1.length + 1; i++) {
+      // ロゴタイトルの部分文字列とランダム文字列を組み合わせます。
+      logoRandom1 = logoTitle1.substr(0, i);
+      for (let j = i; j < logoTitle1.length; j++) {
+        // ランダムな文字を追加します。
+        logoRandom1 += possible.charAt(
+          Math.floor(Math.random() * possible.length)
+        );
       }
-      generateRandomTitle(i, logoRandom2, logoTitleContainer2);
+      // ランダムなタイトルを生成します。
+      generateRandomTitle(i, logoRandom1, logoTitleContainer1);
     }
-  }, 200);
 
-}, 2000); // 2秒後にアニメーションを開始します. // 2秒後にアニメーションを開始します。
-
-}
+    setTimeout(() => {
+      for (let i = 0; i < logoTitle2.length + 1; i++) {
+        logoRandom2 = logoTitle2.substr(0, i);
+        for (let j = i; j < logoTitle2.length; j++) {
+          logoRandom2 += possible.charAt(
+            Math.floor(Math.random() * possible.length)
+          );
+        }
+        generateRandomTitle(i, logoRandom2, logoTitleContainer2);
+      }
+    }, 200);
+  }, 2000); // 2秒後にアニメーションを開始します. // 2秒後にアニメーションを開始します。
+};
 
 // ランダムなタイトルを生成するための関数を定義します。
-const generateRandomTitle = (i: number, logoRandom: string, logoTitleContainer: any) => {
+const generateRandomTitle = (
+  i: number,
+  logoRandom: string,
+  logoTitleContainer: any
+) => {
   setTimeout(() => {
     // テキスト要素のテキストを更新します。
     logoTitleContainer.attr({ text: logoRandom });
   }, i * 70);
-}
+};
 
 // ページ読み込み完了後にplay関数を実行します。
 window.onload = () => {
   play();
-}
+};

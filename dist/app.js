@@ -130,10 +130,14 @@ const play = () => {
         let logoRandom2 = '';
         // 表示するテキストを設定し、SVG内に中央揃えで配置します。
         // text-anchor属性をmiddleに設定することでテキストを中央揃えします。
-        const logoTitleContainer1 = l.text('50%', '40%', '').attr({ 'text-anchor': 'middle' });
-        const logoTitleContainer2 = l.text('50%', '65%', '').attr({ 'text-anchor': 'middle' });
+        const logoTitleContainer1 = l
+            .text('50%', '40%', '')
+            .attr({ 'text-anchor': 'middle' });
+        const logoTitleContainer2 = l
+            .text('50%', '65%', '')
+            .attr({ 'text-anchor': 'middle' });
         // ランダムな文字列生成のための文字セットを定義します。
-        const possible = "-+*/|}{[]~\\\":;?/.><=+-_)(*&^%$#@!)}";
+        const possible = '-+*/|}{[]~\\":;?/.><=+-_)(*&^%$#@!)}';
         // ロゴタイトルの全ての文字についてループします。
         for (let i = 0; i < logoTitle1.length + 1; i++) {
             // ロゴタイトルの部分文字列とランダム文字列を組み合わせます。
