@@ -8,8 +8,9 @@ import {
   contents1H1,
   contents1Img1,
   contents1P,
+  contents2H1,
 } from './const.js';
-// import Snap from 'snapsvg';
+// import * as $ from 'jquery';
 
 console.log('Hello, TypeScript!');
 
@@ -40,14 +41,14 @@ window.addEventListener('DOMContentLoaded', () => {
 sidebar.addEventListener('click', () => {
   if (siteMenuMask.style.opacity === '0') {
     //siteMenuを表示する
-    console.log('siteMenuを表示する');
+    // console.log('siteMenuを表示する');
     siteMenuMask.style.opacity = '1';
     siteMenuContents.style.opacity = '1';
     siteMenuMask.style.left = '0';
     siteMenuContents.style.left = '0';
   } else {
     //siteMenuを非表示にする
-    console.log('siteMenuを非表示にする');
+    // console.log('siteMenuを非表示にする');
     siteMenuMask.style.opacity = '0';
     siteMenuContents.style.opacity = '0';
     siteMenuMask.style.left = '-100%';
@@ -85,10 +86,10 @@ animate();
 
 // sidebarのShopNameをスクロールしたら表示する
 const bottomOfScreen = window.innerHeight;
-console.log('bottomOfScreen: ' + bottomOfScreen);
+// console.log('bottomOfScreen: ' + bottomOfScreen);
 
 const rect = shopNameP.getBoundingClientRect();
-console.log('rect: ' + rect);
+// console.log('rect: ' + rect);
 
 window.addEventListener('scroll', () => {
   shopNameP.style.transition = 'opacity 0.5s'; // 0.5秒のトランジションを追加
@@ -109,7 +110,7 @@ window.addEventListener('scroll', () => {
   contents1H1.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
 
   const topOfH1 = contents1H1.offsetTop;
-  console.log('topOfH1: ' + topOfH1);
+  // console.log('topOfH1: ' + topOfH1);
 
   const triggerPoint = window.innerHeight - window.innerHeight / 10;
 
@@ -125,7 +126,7 @@ window.addEventListener('scroll', () => {
   contents1Img1.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
 
   const topOfImg = contents1Img1.offsetTop;
-  console.log('topOfImg: ' + topOfImg);
+  // console.log('topOfImg: ' + topOfImg);
 
   const triggerPoint = window.innerHeight - window.innerHeight / 10;
 
@@ -141,7 +142,7 @@ window.addEventListener('scroll', () => {
   contents1P.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
 
   const topOfImg = contents1P.offsetTop;
-  console.log('topOfImg: ' + topOfImg);
+  // console.log('topOfImg: ' + topOfImg);
 
   const triggerPoint = window.innerHeight - window.innerHeight / 10;
 
@@ -212,7 +213,7 @@ const play = () => {
         generateRandomTitle(i, logoRandom2, logoTitleContainer2);
       }
     }, 200);
-  }, 2000); // 2秒後にアニメーションを開始します. // 2秒後にアニメーションを開始します。
+  }, 0); // 2秒後にアニメーションを開始します. // 2秒後にアニメーションを開始します。
 };
 
 // ランダムなタイトルを生成するための関数を定義します。
@@ -227,7 +228,84 @@ const generateRandomTitle = (
   }, i * 70);
 };
 
-// ページ読み込み完了後にplay関数を実行します。
-window.onload = () => {
-  play();
-};
+// class="contents2"のh1要素が画面内に入ったらアニメーションを開始する
+let n = 0;
+window.addEventListener('scroll', () => {
+  const topOfH1 = contents2H1.offsetTop;
+  const triggerPoint = window.innerHeight - window.innerHeight / 5;
+  // console.log('window.scrollY: ' + window.scrollY);
+  // console.log('triggerPoint: ' + triggerPoint);
+  // console.log('topOfH1: ' + topOfH1);
+
+  if (window.scrollY + triggerPoint >= topOfH1 && n === 0) {
+    play();
+    n++;
+  }
+});
+
+// ------------------------------------------------------------
+
+// class="subContentsSpan1"をclass="subContentsSpan2"にスライドする
+// $(function() {
+//   // スライドショーの初期設定
+//   $(".subContents .subContentsImg1").hide().css({ "position": "absolute" });
+//   $(".subContents .subContentsImg2").hide().css({ "position": "absolute" });
+//   $(".subContents .subContentsImg3").hide().css({ "position": "absolute" });
+//   $(".subContents .subContentsImg1").show().addClass("slide");
+
+//   setInterval(function() {
+//     console.log('setInterval');
+//     var $active = $(".subContents .subContentsImg1.slide");
+//     var $next = $active.next(".subContentsImg1").length ? $active.next(".subContentsImg1") : $(".subContents .subContentsImg1:first");
+
+//     $active.fadeOut(0).removeClass("slide");
+//     $next.show().addClass("slide");
+//   }, 3000);
+// });
+
+// ------------------------------------------------------------
+
+$(function() {
+  console.log('$(function() {');
+  $('.instagramContents').each(function() {
+    console.log('each');
+    // スライド（画像）の数を取得
+    var $slides = $(this).find('.instagramPost'),
+        slideNum = $slides.length,
+        currentIdx = 0; // 何番目か
+
+        console.log('slideNum: ' + slideNum);
+        console.log('currentIdx: ' + currentIdx);
+
+  
+    // 最初の画像をフェードイン
+    $(".instagramContents .instagramPost").eq(currentIdx).fadeIn();
+    console.log('fadeIn');
+  
+    // 3秒後に次のスライドを表示
+    setTimeout(dispNextSlide, 3000);
+  
+    // 次のスライドを表示するメソッド
+    function dispNextSlide() {
+      console.log('dispNextSlide');
+      var nextIdx = currentIdx + 1;
+  
+      // 最後のスライドの場合ははじめに戻る
+      if (nextIdx > (slideNum - 1)) {
+        nextIdx = 0
+      }
+  
+      // 現在のスライドをフェードアウト
+      $(".instagramContents .instagramPost").eq(currentIdx).fadeOut(function() {
+        $(".instagramContents .instagramPost").eq(nextIdx).fadeIn(function() {
+          // フェードイン完了後に次のスライドを表示する
+          setTimeout(dispNextSlide, 3000);
+        });
+      });
+
+      // インデックスを更新
+      currentIdx = nextIdx;
+    }
+  });
+ });
+ 

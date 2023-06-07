@@ -4,7 +4,11 @@
     "target": "es6",
     "outDir": "../dist",
     "sourceMap": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "paths": {
+      "jquery": ["node_modules/jquery/dist/jquery.slim.min.js"]
+    }
   },
   "include": ["../ts/*.ts", "../types/**/*"]
 }

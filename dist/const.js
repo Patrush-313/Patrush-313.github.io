@@ -5,6 +5,7 @@ export const siteMenuMask = document.querySelector('.siteMenuMask');
 export const topImage = document.querySelector('.top');
 export const shopNameP = document.querySelector('.sidebarShopName p');
 export const contents1H1 = document.querySelector('.contents1 h1');
+export const contents2H1 = document.querySelector('.contents2 h1');
 export const contents1Img1 = document.querySelector('.contents1 .contents1-img1');
 export const contents1P = document.querySelector('.contents1 p');
 //# sourceMappingURL=const.js.map
