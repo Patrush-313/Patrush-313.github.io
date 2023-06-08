@@ -526,9 +526,9 @@
     margin-top: 16px;
     width: 90%;
     position: relative;
-    padding-bottom: 100VH;
+    /* padding-bottom: 100%; */
   }
-
+  
   .instagramPost {
     display: none;
     position: absolute;
@@ -537,6 +537,9 @@
   .instagramContentsCount {
     margin: 0 0 8% 5%;
     text-align: start;
+  }
+
+  .instagram-media {
   }
 
   /* contentsFin */
