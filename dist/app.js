@@ -123,8 +123,8 @@ const play = () => {
     // アニメーションの開始を待機します。
     setTimeout(() => {
         // 表示するテキストを設定します。
-        const logoTitle1 = 'アイウエオ上行';
-        const logoTitle2 = 'アイウエオ下行';
+        const logoTitle1 = '洗練された雰囲気';
+        const logoTitle2 = '心地よい空間';
         // ランダムな文字列を初期化します。
         let logoRandom1 = '';
         let logoRandom2 = '';
@@ -180,22 +180,6 @@ window.addEventListener('scroll', () => {
         n++;
     }
 });
-// ------------------------------------------------------------
-// class="subContentsSpan1"をclass="subContentsSpan2"にスライドする
-// $(function() {
-//   // スライドショーの初期設定
-//   $(".subContents .subContentsImg1").hide().css({ "position": "absolute" });
-//   $(".subContents .subContentsImg2").hide().css({ "position": "absolute" });
-//   $(".subContents .subContentsImg3").hide().css({ "position": "absolute" });
-//   $(".subContents .subContentsImg1").show().addClass("slide");
-//   setInterval(function() {
-//     console.log('setInterval');
-//     var $active = $(".subContents .subContentsImg1.slide");
-//     var $next = $active.next(".subContentsImg1").length ? $active.next(".subContentsImg1") : $(".subContents .subContentsImg1:first");
-//     $active.fadeOut(0).removeClass("slide");
-//     $next.show().addClass("slide");
-//   }, 3000);
-// });
 // ------------------------------------------------------------
 $(function () {
     console.log('$(function() {');
