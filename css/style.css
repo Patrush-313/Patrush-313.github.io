@@ -198,6 +198,7 @@
     line-height: 2;
   }
 
+  
   /* header */
   header {
     height: 100vh;
@@ -205,7 +206,7 @@
     position: fixed;
     z-index: 20;
   }
-
+  
   /* sidebar */
   .sidebar {
     height: 100%;
@@ -213,38 +214,32 @@
     text-align: center;
     position: absolute;
     z-index: 30;
-    /* 透明度 */
-    /* opacity: 0; */
   }
-
+  
   .sideBarMask {
     background-color: rgb(235, 235, 235);
     width: 100%;
     height: 100%;
     position: absolute;
     top: -100vh;
-    /* 透明度 */
     opacity: 0;
   }
-
+  
   .sidebarDelimiter {
     position: absolute;
     top: 0;
     width: 100%;
     height: 22px;
     border-right: 1px solid rgb(235, 235, 235);
-    /* z-index: 40; */
   }
-
+  
   .sideBarContents {
     position: absolute;
     width: 100%;
     height: 100%;
-    /* z-index: 40; */
   }
-
+  
   .sidebar [type='button1'] {
-    /* display: none; */
     position: absolute;
     width: 100%;
     left: 0;
@@ -254,13 +249,13 @@
     padding-bottom: 100vh;
     font-size: 50px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: lighter;
     border: none;
     color: grey;
     background: none;
   }
-
+  
   .sidebar [type='button2'] {
     display: none;
     position: absolute;
@@ -272,13 +267,13 @@
     padding-bottom: 100vh;
     font-size: 50px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: lighter;
     border: none;
     color: grey;
     background: none;
   }
-
+  
   .sidebar .sidebarShopName p {
     position: absolute;
     font-weight: lighter;
@@ -291,23 +286,21 @@
     line-height: 0.65;
     opacity: 0;
   }
-
+  
   .sidebarShopName p span {
     color: black;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     display: inline-block;
     transform: rotate(90deg);
   }
-
+  
   .siteMenu {
     top: 0;
     width: 100vw;
     z-index: 20;
-    /* 透明度 ONOFFでSiteMenuの表示*/
-    /* opacity: 1; */
   }
-
+  
   .siteMenuMask {
     position: absolute;
     top: 0;
@@ -316,7 +309,7 @@
     background-color: white;
     opacity: 1;
   }
-
+  
   .siteMenuContents {
     position: absolute;
     left: -100%;
@@ -325,22 +318,36 @@
     display: block;
     opacity: 0;
   }
-
+  
   .siteMenu p {
     padding-bottom: 2rem;
     padding-left: 1rem;
     font-size: 12px;
     width: 64%;
   }
-
-  .siteMenuContents img[src*='lamp.png'] {
-    /* z-index: 1; */
-    width: 20px;
-    height: 20px;
+  
+  img[src*='lamp.png'] {
     transform: rotate(180deg);
-    margin: 0.3em 0;
+  }
+  
+  .contents1 [src*='lamp.png'] {
+    opacity: 0;
   }
 
+  .contents2 [src*='lamp.png'] {
+    opacity: 0;
+  }
+
+  .contents3 [src*='lamp.png'] {
+    opacity: 0;
+  }
+  
+  .siteMenuContents img[src*='lamp.png'] {
+    width: 20px;
+    height: 20px;
+    margin: 0.3em 0;
+  }
+  
   .siteMenuContents [src*='store'] {
     width: 22px;
     height: 22px;
@@ -432,7 +439,7 @@
     margin-top: 10%;
     /* z-index: 10; */
   }
-  
+
   .top p {
     width: 80%;
     margin-top: 10%;
@@ -454,7 +461,7 @@
     font-size: 26px;
     letter-spacing: 0.2em;
   }
-  
+
   [class*='contents'] p {
     letter-spacing: 0.15em;
     line-height: 2em;
@@ -470,7 +477,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    /* z-index: -1; */
+    opacity: 0;
   }
 
   .contents1 [src*='shopView17'] {
@@ -479,33 +486,25 @@
     border-radius: 50%;
     margin: 10% 0;
   }
-  
+
   .contents1 h1 {
     opacity: 0;
   }
-  
-  .contents1 .contents1-img1 {
-    opacity: 0;
-  }
-  
+
   .contents1 p {
     opacity: 0;
-    /* margin-left: 4%;
-    letter-spacing: 2.5px;
-    font-size: 16px;
-    width: 92%; */
   }
 
   /* contents2 */
-  
+
   .subContents {
     display: flex;
     overflow: hidden;
     margin: 5% 0 0 0;
     width: 100%;
   }
-  
-  .subContents [class^="subContentsSpan"] {
+
+  .subContents [class^='subContentsSpan'] {
     font-size: 10px;
     line-height: 1;
     width: 12px;
@@ -513,12 +512,12 @@
     padding: 0 0.8em 0 0.8em;
   }
 
-  [class^="subContentsSpan"] span {
+  [class^='subContentsSpan'] span {
     writing-mode: vertical-lr;
     transform: rotate(90deg);
   }
 
-  [class^="subContentsImg"] [src*='shopView'] {
+  [class^='subContentsImg'] [src*='shopView'] {
     height: 60vh;
   }
 
@@ -527,30 +526,44 @@
     text-align: start;
   }
 
-  /* contents3 */
+  .contents2 p {
+    opacity: 0;
+  }
 
+  /* contents3 */
   .instagramContents {
     margin-top: 16px;
-    width: 90%;
     position: relative;
-    /* padding-bottom: 100%; */
+    padding-bottom: 0;
+    margin-bottom: 20%;
   }
-  
+
   .instagramPost {
-    display: none;
     position: absolute;
+    /* display: none; */
   }
-  
+
+  .instagramPost img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* instagramの投稿を埋め込み式とする場合 */
+  /* .instagram-media{
+    min-width: 100% !important;
+    min-height: 100% !important;
+  } */
+
   .instagramContentsCount {
     margin: 0 0 8% 5%;
     text-align: start;
   }
 
-  .instagram-media {
+  .contents3 p {
+    opacity: 0;
   }
 
   /* contentsFin */
-
   .contentsFin {
     width: 84%;
     margin: 90px 0 0 16%;
@@ -585,7 +598,7 @@
   }
 
   .instagramLink a {
-    padding: 1.5em 2em;
+    padding: 1.5em 4em;
     display: flex;
     text-decoration: none;
     color: #333;
@@ -621,7 +634,6 @@
     width: 80%;
     margin-bottom: 64px;
     color: lightgray;
-    /* opacity: ; */
   }
 
   .other h2 {

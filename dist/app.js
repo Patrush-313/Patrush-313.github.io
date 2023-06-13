@@ -1,6 +1,12 @@
-import { sidebar, sideBarMask, topImage, siteMenuMask, siteMenuContents, shopNameP, contents1H1, contents1Img1, contents1P, contents2H1, } from './const.js';
+import { sidebar, sideBarMask, topImage, siteMenuMask, siteMenuContents, shopNameP, contents1H1, contents1Img1, contents2Img1, contents3Img1, contents1P, contents2P, contents3P, contents2H1, contents3H1, contents1Window } from './const.js';
 // import * as $ from 'jquery';
 console.log('Hello, TypeScript!');
+// ------------------------------------------------------------
+// ページがリロードされたときの処理
+window.addEventListener('beforeunload', () => {
+    // 最上部にスクロールする
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 // ------------------------------------------------------------
 // サイトが読み込まれたらサイドバーマスクを表示する
 window.addEventListener('DOMContentLoaded', () => {
@@ -92,7 +98,7 @@ window.addEventListener('scroll', () => {
     }
 });
 // ------------------------------------------------------------
-// class="contents1"のimg要素を取得
+// class="contents1"のimg1要素を取得
 window.addEventListener('scroll', () => {
     contents1Img1.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
     const topOfImg = contents1Img1.offsetTop;
@@ -103,7 +109,18 @@ window.addEventListener('scroll', () => {
     }
 });
 // ------------------------------------------------------------
-// class="contents1"のimg要素を取得
+// class="contents1"のwindow要素を取得
+window.addEventListener('scroll', () => {
+    contents1Window.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
+    const topOfImg = contents1Window.offsetTop;
+    // console.log('topOfImg: ' + topOfImg);
+    const triggerPoint = window.innerHeight - window.innerHeight / 10;
+    if (window.scrollY + triggerPoint >= topOfImg) {
+        contents1Window.style.opacity = '1';
+    }
+});
+// ------------------------------------------------------------
+// class="contents1"のp要素を取得
 window.addEventListener('scroll', () => {
     contents1P.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
     const topOfImg = contents1P.offsetTop;
@@ -181,37 +198,230 @@ window.addEventListener('scroll', () => {
     }
 });
 // ------------------------------------------------------------
-$(function () {
-    console.log('$(function() {');
-    $('.instagramContents').each(function () {
-        console.log('each');
-        // スライド（画像）の数を取得
-        var $slides = $(this).find('.instagramPost'), slideNum = $slides.length, currentIdx = 0; // 何番目か
-        console.log('slideNum: ' + slideNum);
-        console.log('currentIdx: ' + currentIdx);
-        // 最初の画像をフェードイン
-        $(".instagramContents .instagramPost").eq(currentIdx).fadeIn();
-        console.log('fadeIn');
-        // 3秒後に次のスライドを表示
-        setTimeout(dispNextSlide, 3000);
-        // 次のスライドを表示するメソッド
-        function dispNextSlide() {
-            console.log('dispNextSlide');
-            var nextIdx = currentIdx + 1;
-            // 最後のスライドの場合ははじめに戻る
-            if (nextIdx > (slideNum - 1)) {
-                nextIdx = 0;
+// class="contents2"のimg1要素を取得
+window.addEventListener('scroll', () => {
+    contents2Img1.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
+    const topOfImg = contents2Img1.offsetTop;
+    // console.log('topOfImg: ' + topOfImg);
+    const triggerPoint = window.innerHeight - window.innerHeight / 10;
+    if (window.scrollY + triggerPoint >= topOfImg) {
+        contents2Img1.style.opacity = '1';
+    }
+});
+// ------------------------------------------------------------
+// class="contents1"のp要素を取得
+window.addEventListener('scroll', () => {
+    contents2P.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
+    const topOfImg = contents2P.offsetTop;
+    // console.log('topOfImg: ' + topOfImg);
+    const triggerPoint = window.innerHeight - window.innerHeight / 10;
+    if (window.scrollY + triggerPoint >= topOfImg) {
+        contents2P.style.opacity = '1';
+    }
+});
+// ------------------------------------------------------------
+const play2 = () => {
+    // SVG要素をSnap.svgで操作するためのオブジェクトを取得します。
+    const l2 = Snap('#logo2');
+    // パス要素を選択します。
+    const p2 = l2.select('path');
+    // SVG内のすべての子要素を削除します。
+    l2.clear();
+    // アニメーションの開始を待機します。
+    setTimeout(() => {
+        // 表示するテキストを設定します。
+        const logoTitle2_1 = '旬の恵みと';
+        const logoTitle2_2 = '楽しみの季節';
+        // ランダムな文字列を初期化します。
+        let logoRandom2_1 = '';
+        let logoRandom2_2 = '';
+        // 表示するテキストを設定し、SVG内に中央揃えで配置します。
+        // text-anchor属性をmiddleに設定することでテキストを中央揃えします。
+        const logoTitleContainer2_1 = l2
+            .text('50%', '40%', '')
+            .attr({ 'text-anchor': 'middle' });
+        const logoTitleContainer2_2 = l2
+            .text('50%', '65%', '')
+            .attr({ 'text-anchor': 'middle' });
+        // ランダムな文字列生成のための文字セットを定義します。
+        const possible = '-+*/|}{[]~\\":;?/.><=+-_)(*&^%$#@!)}';
+        // ロゴタイトルの全ての文字についてループします。
+        for (let i = 0; i < logoTitle2_1.length + 1; i++) {
+            // ロゴタイトルの部分文字列とランダム文字列を組み合わせます。
+            logoRandom2_1 = logoTitle2_1.substr(0, i);
+            for (let j = i; j < logoTitle2_1.length; j++) {
+                // ランダムな文字を追加します。
+                logoRandom2_1 += possible.charAt(Math.floor(Math.random() * possible.length));
             }
-            // 現在のスライドをフェードアウト
-            $(".instagramContents .instagramPost").eq(currentIdx).fadeOut(function () {
-                $(".instagramContents .instagramPost").eq(nextIdx).fadeIn(function () {
-                    // フェードイン完了後に次のスライドを表示する
-                    setTimeout(dispNextSlide, 3000);
-                });
-            });
-            // インデックスを更新
-            currentIdx = nextIdx;
+            // ランダムなタイトルを生成します。
+            generateRandomTitle(i, logoRandom2_1, logoTitleContainer2_1);
+        }
+        setTimeout(() => {
+            for (let i = 0; i < logoTitle2_2.length + 1; i++) {
+                logoRandom2_2 = logoTitle2_2.substr(0, i);
+                for (let j = i; j < logoTitle2_2.length; j++) {
+                    logoRandom2_2 += possible.charAt(Math.floor(Math.random() * possible.length));
+                }
+                generateRandomTitle(i, logoRandom2_2, logoTitleContainer2_2);
+            }
+        }, 200);
+    }, 0); // 2秒後にアニメーションを開始します. // 2秒後にアニメーションを開始します。
+};
+// class="contents3"のh1要素が画面内に入ったらアニメーションを開始する
+let n2 = 0;
+window.addEventListener('scroll', () => {
+    const topOfH1_2 = contents3H1.offsetTop;
+    const triggerPoint_2 = window.innerHeight - window.innerHeight / 5;
+    if (window.scrollY + triggerPoint_2 >= topOfH1_2 && n2 === 0) {
+        play2();
+        n2++;
+    }
+});
+// ------------------------------------------------------------
+// class="contents3"のimg1要素を取得
+window.addEventListener('scroll', () => {
+    contents3Img1.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
+    const topOfImg = contents3Img1.offsetTop;
+    // console.log('topOfImg: ' + topOfImg);
+    const triggerPoint = window.innerHeight - window.innerHeight / 10;
+    if (window.scrollY + triggerPoint >= topOfImg) {
+        contents3Img1.style.opacity = '1';
+    }
+});
+// ------------------------------------------------------------
+// instagramの投稿を画像とする場合
+$(function () {
+    // .instagramContentsが画面内に表示されたら処理を実行
+    $(window).on('scroll', function () {
+        var contentTop = $('.instagramContents').offset().top;
+        var contentBottom = contentTop + $('.instagramContents').outerHeight();
+        var windowTop = $(window).scrollTop();
+        var windowBottom = windowTop + $(window).height();
+        if (contentTop < windowBottom && contentBottom > windowTop) {
+            console.log("slide-Start");
+            startSlideshow();
+            $(window).off('scroll');
         }
     });
+    function startSlideshow() {
+        console.log('startSlideshow');
+        $('.instagramContents').each(function () {
+            var $slides = $(this).find('.instagramPost');
+            var slideNum = $slides.length;
+            var currentIdx = 0;
+            $(".instagramContents .instagramPost").eq(currentIdx).fadeIn();
+            setTimeout(dispNextSlide, 3000);
+            function dispNextSlide() {
+                var nextIdx = currentIdx + 1;
+                if (nextIdx > (slideNum - 1)) {
+                    nextIdx = 0;
+                }
+                $(".instagramContents .instagramPost").eq(currentIdx).fadeOut(function () {
+                    $(".instagramContents .instagramPost").eq(nextIdx).fadeIn(function () {
+                        setTimeout(dispNextSlide, 2000);
+                    });
+                });
+                currentIdx = nextIdx;
+            }
+        });
+    }
+});
+// ------------------------------------------------------------
+// instagramの投稿を画像とする場合
+// instagramConts要素を取得し、型をHTMLElementとして明示的に指定
+const instagramContents = document.querySelector('.instagramContents');
+// instagram-Post img要素を取得し、型をNodeListOf<HTMLElement>として明示的に指定
+const instagramPosts = document.querySelectorAll('.instagramPost');
+// instagram-Post img要素を取得し、型をNodeListOf<HTMLElement>として明示的に指定
+const instagramImgs = document.querySelectorAll('.instagramPost img');
+const instagramImg = instagramImgs[0];
+const height = instagramImg.offsetHeight;
+console.log(`height: ${height}px`);
+instagramContents.style.paddingBottom = `${height}px`;
+instagramPosts.forEach(element => {
+    element.style.display = `none`;
+});
+// ------------------------------------------------------------
+// instagramの投稿を埋め込み式とする場合
+// $(function() {
+//   // console.log('$(function() {');
+//   $('.instagramContents').each(function() {
+//     // console.log('each');
+//     // スライド（画像）の数を取得
+//     var $slides = $(this).find('.instagramPost'),
+//         slideNum = $slides.length,
+//         currentIdx = 0; // 何番目か
+//         // console.log('slideNum: ' + slideNum);
+//         // console.log('currentIdx: ' + currentIdx);
+//     // 最初の画像をフェードイン
+//     $(".instagramContents .instagramPost").eq(currentIdx).fadeIn();
+//     // console.log('fadeIn');
+//     // 3秒後に次のスライドを表示
+//     setTimeout(dispNextSlide, 3000);
+//     // 次のスライドを表示するメソッド
+//     function dispNextSlide() {
+//       // console.log('dispNextSlide');
+//       var nextIdx = currentIdx + 1;
+//       // 最後のスライドの場合ははじめに戻る
+//       if (nextIdx > (slideNum - 1)) {
+//         nextIdx = 0
+//       }
+//       // 現在のスライドをフェードアウト
+//       $(".instagramContents .instagramPost").eq(currentIdx).fadeOut(function() {
+//         $(".instagramContents .instagramPost").eq(nextIdx).fadeIn(function() {
+//           // フェードイン完了後に次のスライドを表示する
+//           setTimeout(dispNextSlide, 2000);
+//         });
+//       });
+//       // インデックスを更新
+//       currentIdx = nextIdx;
+//     }
+//   });
+//  });
+// // ------------------------------------------------------------
+// instagramの投稿を埋め込み式とする場合
+//   // instagramConts要素を取得し、型をHTMLElementとして明示的に指定
+//   const instagramContents = document.querySelector('.instagramContents') as HTMLElement;
+//   // instagram-media要素を取得し、型をNodeListOf<HTMLElement>として明示的に指定
+//   const instagramMedias = document.querySelectorAll('.instagram-media') as NodeListOf<HTMLElement>;
+//   // 初期の高さと最大の高さ
+// let oldHeight = 0;
+// let maxHeight = 0;
+// window.addEventListener('DOMContentLoaded', () => {
+//   // 最初のinstagram-mediaの要素を取得
+//   const instagramMedia = document.querySelector('.instagram-media') as HTMLElement;
+//   // 高さの監視を開始
+//   const checkHeight = setInterval(() => {
+//     // 現在の高さを取得
+//     const newHeight = instagramMedia.offsetHeight;
+//     // 高さが変化したかチェック
+//     if (newHeight !== oldHeight) {
+//       console.log(`Height changed from ${oldHeight}px to ${newHeight}px`);
+//       oldHeight = newHeight;
+//     }
+//     // 最大の高さを更新
+//     if (newHeight > maxHeight) {
+//       maxHeight = newHeight;
+//       console.log(`New max height: ${maxHeight}px`);
+//       instagramContents.style.paddingBottom = `${maxHeight}px`;
+//     }
+//     // // newHeightが0の場合は監視を停止
+//     // if (newHeight === 0) {
+//     //   clearInterval(checkHeight);
+//     //   console.log('Stopped monitoring height');
+//     //   console.log(`Max height during monitoring: ${maxHeight}px`);
+//     // }
+//   }, 100); // 100ミリ秒ごとにチェック
+// });
+// ------------------------------------------------------------
+// class="contents1"のp要素を取得
+window.addEventListener('scroll', () => {
+    contents3P.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
+    const topOfImg = contents3P.offsetTop;
+    // console.log('topOfImg: ' + topOfImg);
+    const triggerPoint = window.innerHeight - window.innerHeight / 10;
+    if (window.scrollY + triggerPoint >= topOfImg) {
+        contents3P.style.opacity = '1';
+    }
 });
 //# sourceMappingURL=app.js.map
