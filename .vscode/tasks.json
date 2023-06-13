@@ -26,7 +26,7 @@
       "label": "TypeScriptをコンパイル",
       "type": "shell",
       "command": "tsc",
-      "args": ["./ts/*.ts", "--outDir", "./js/"],
+      "args": ["./ts/*.ts", "--outDir", "./dist/"],
       "group": "build",
       "presentation": {
         "reveal": "silent"

@@ -12,6 +12,6 @@ export const contents2Img1 = document.querySelector('.contents2 .contents2-img1'
 export const contents3Img1 = document.querySelector('.contents3 .contents3-img1');
 export const contents1Window = document.querySelector('.contents1 .window');
 export const contents1P = document.querySelector('.contents1 p');
-export const contents2P = document.querySelector('.contents2 p');
+export const contents2P = document.querySelector('.contents2_p p');
 export const contents3P = document.querySelector('.contents3 p');
 //# sourceMappingURL=const.js.map

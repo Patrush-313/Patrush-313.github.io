@@ -1,12 +1,13 @@
-import { sidebar, sideBarMask, topImage, siteMenuMask, siteMenuContents, shopNameP, contents1H1, contents1Img1, contents2Img1, contents3Img1, contents1P, contents2P, contents3P, contents2H1, contents3H1, contents1Window } from './const.js';
+import { sidebar, sideBarMask, topImage, siteMenuMask, siteMenuContents, shopNameP, contents1H1, contents1Img1, contents2Img1, contents3Img1, contents1P, contents2P, contents3P, contents2H1, contents3H1, contents1Window, } from './const.js';
 // import * as $ from 'jquery';
 console.log('Hello, TypeScript!');
 // ------------------------------------------------------------
-// ページがリロードされたときの処理
-window.addEventListener('beforeunload', () => {
-    // 最上部にスクロールする
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+// // ページがリロードされたときの処理
+// window.addEventListener('DOMContentLoaded', () => {
+//   // 最上部にスクロールする
+//   // console.log('topへ');
+//   window.scrollTo({ top: 0, behavior:`smooth` });
+// });
 // ------------------------------------------------------------
 // サイトが読み込まれたらサイドバーマスクを表示する
 window.addEventListener('DOMContentLoaded', () => {
@@ -22,6 +23,9 @@ window.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             siteMenuMask.style.transition = 'all 1.5s';
             siteMenuMask.style.opacity = '0';
+            setTimeout(() => {
+                siteMenuMask.style.right = '100vw';
+            }, 1000);
         }, 200);
     }, 1200);
 });
@@ -88,9 +92,12 @@ window.addEventListener('scroll', () => {
 });
 // ------------------------------------------------------------
 // class="contents1"のh1要素を取得
+let topOfH1;
 window.addEventListener('scroll', () => {
-    contents1H1.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
-    const topOfH1 = contents1H1.offsetTop;
+    contents1H1.style.transition = 'opacity 2s'; // 3秒のトランジションを追加
+    setTimeout(() => {
+        topOfH1 = contents1H1.offsetTop;
+    }, 1200);
     // console.log('topOfH1: ' + topOfH1);
     const triggerPoint = window.innerHeight - window.innerHeight / 10;
     if (window.scrollY + triggerPoint >= topOfH1) {
@@ -99,35 +106,44 @@ window.addEventListener('scroll', () => {
 });
 // ------------------------------------------------------------
 // class="contents1"のimg1要素を取得
+let topOfImg1;
 window.addEventListener('scroll', () => {
-    contents1Img1.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
-    const topOfImg = contents1Img1.offsetTop;
+    contents1Img1.style.transition = 'opacity 2s'; // 3秒のトランジションを追加
+    setTimeout(() => {
+        topOfImg1 = contents1Img1.offsetTop;
+    }, 1200);
     // console.log('topOfImg: ' + topOfImg);
     const triggerPoint = window.innerHeight - window.innerHeight / 10;
-    if (window.scrollY + triggerPoint >= topOfImg) {
+    if (window.scrollY + triggerPoint >= topOfImg1) {
         contents1Img1.style.opacity = '1';
     }
 });
 // ------------------------------------------------------------
-// class="contents1"のwindow要素を取得
+// class="contents1"のp要素を取得
+let topOfP;
 window.addEventListener('scroll', () => {
-    contents1Window.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
-    const topOfImg = contents1Window.offsetTop;
+    contents1P.style.transition = 'opacity 2s'; // 3秒のトランジションを追加
+    setTimeout(() => {
+        topOfP = contents1P.offsetTop;
+    }, 1200);
     // console.log('topOfImg: ' + topOfImg);
     const triggerPoint = window.innerHeight - window.innerHeight / 10;
-    if (window.scrollY + triggerPoint >= topOfImg) {
-        contents1Window.style.opacity = '1';
+    if (window.scrollY + triggerPoint >= topOfP) {
+        contents1P.style.opacity = '1';
     }
 });
 // ------------------------------------------------------------
-// class="contents1"のp要素を取得
+// class="contents1"のwindow要素を取得
+let topOfImg2;
 window.addEventListener('scroll', () => {
-    contents1P.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
-    const topOfImg = contents1P.offsetTop;
+    contents1Window.style.transition = 'opacity 2s'; // 3秒のトランジションを追加
+    setTimeout(() => {
+        topOfImg2 = contents1Window.offsetTop;
+    }, 1200);
     // console.log('topOfImg: ' + topOfImg);
     const triggerPoint = window.innerHeight - window.innerHeight / 10;
-    if (window.scrollY + triggerPoint >= topOfImg) {
-        contents1P.style.opacity = '1';
+    if (window.scrollY + triggerPoint >= topOfImg2) {
+        contents1Window.style.opacity = '1';
     }
 });
 const play = () => {
@@ -186,36 +202,44 @@ const generateRandomTitle = (i, logoRandom, logoTitleContainer) => {
 };
 // class="contents2"のh1要素が画面内に入ったらアニメーションを開始する
 let n = 0;
+let contents2OfH1;
 window.addEventListener('scroll', () => {
-    const topOfH1 = contents2H1.offsetTop;
+    setTimeout(() => {
+        contents2OfH1 = contents2H1.offsetTop;
+    }, 1200);
     const triggerPoint = window.innerHeight - window.innerHeight / 5;
     // console.log('window.scrollY: ' + window.scrollY);
     // console.log('triggerPoint: ' + triggerPoint);
     // console.log('topOfH1: ' + topOfH1);
-    if (window.scrollY + triggerPoint >= topOfH1 && n === 0) {
+    if (window.scrollY + triggerPoint >= contents2OfH1 && n === 0) {
         play();
         n++;
     }
 });
 // ------------------------------------------------------------
 // class="contents2"のimg1要素を取得
+let contents2OfImg1;
 window.addEventListener('scroll', () => {
-    contents2Img1.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
-    const topOfImg = contents2Img1.offsetTop;
+    contents2Img1.style.transition = 'opacity 2s'; // 3秒のトランジションを追加
+    setTimeout(() => {
+        contents2OfImg1 = contents2Img1.offsetTop;
+    }, 1200);
     // console.log('topOfImg: ' + topOfImg);
     const triggerPoint = window.innerHeight - window.innerHeight / 10;
-    if (window.scrollY + triggerPoint >= topOfImg) {
+    if (window.scrollY + triggerPoint >= contents2OfImg1) {
         contents2Img1.style.opacity = '1';
     }
 });
 // ------------------------------------------------------------
 // class="contents1"のp要素を取得
+let contents2OfP;
 window.addEventListener('scroll', () => {
-    contents2P.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
-    const topOfImg = contents2P.offsetTop;
+    contents2P.style.transition = 'opacity 2s'; // 3秒のトランジションを追加
+    contents2OfP = contents2P.offsetTop;
     // console.log('topOfImg: ' + topOfImg);
     const triggerPoint = window.innerHeight - window.innerHeight / 10;
-    if (window.scrollY + triggerPoint >= topOfImg) {
+    if (window.scrollY + triggerPoint >= contents2OfP) {
+        console.log("はいった");
         contents2P.style.opacity = '1';
     }
 });
@@ -269,36 +293,43 @@ const play2 = () => {
 };
 // class="contents3"のh1要素が画面内に入ったらアニメーションを開始する
 let n2 = 0;
+let contents3OfH1;
 window.addEventListener('scroll', () => {
-    const topOfH1_2 = contents3H1.offsetTop;
+    setTimeout(() => {
+        contents3OfH1 = contents3H1.offsetTop;
+    }, 1200);
     const triggerPoint_2 = window.innerHeight - window.innerHeight / 5;
-    if (window.scrollY + triggerPoint_2 >= topOfH1_2 && n2 === 0) {
+    if (window.scrollY + triggerPoint_2 >= contents3OfH1 && n2 === 0) {
         play2();
         n2++;
     }
 });
 // ------------------------------------------------------------
 // class="contents3"のimg1要素を取得
+let contents3OfImg1;
 window.addEventListener('scroll', () => {
-    contents3Img1.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
-    const topOfImg = contents3Img1.offsetTop;
+    contents3Img1.style.transition = 'opacity 2s'; // 3秒のトランジションを追加
+    contents3OfImg1 = contents3Img1.offsetTop;
     // console.log('topOfImg: ' + topOfImg);
     const triggerPoint = window.innerHeight - window.innerHeight / 10;
-    if (window.scrollY + triggerPoint >= topOfImg) {
+    if (window.scrollY + triggerPoint >= contents3OfImg1) {
         contents3Img1.style.opacity = '1';
     }
 });
 // ------------------------------------------------------------
 // instagramの投稿を画像とする場合
+let contentTop;
 $(function () {
     // .instagramContentsが画面内に表示されたら処理を実行
     $(window).on('scroll', function () {
-        var contentTop = $('.instagramContents').offset().top;
+        setTimeout(() => {
+            contentTop = $('.instagramContents').offset().top;
+        }, 1200);
         var contentBottom = contentTop + $('.instagramContents').outerHeight();
         var windowTop = $(window).scrollTop();
         var windowBottom = windowTop + $(window).height();
         if (contentTop < windowBottom && contentBottom > windowTop) {
-            console.log("slide-Start");
+            console.log('slide-Start');
             startSlideshow();
             $(window).off('scroll');
         }
@@ -309,15 +340,19 @@ $(function () {
             var $slides = $(this).find('.instagramPost');
             var slideNum = $slides.length;
             var currentIdx = 0;
-            $(".instagramContents .instagramPost").eq(currentIdx).fadeIn();
+            $('.instagramContents .instagramPost').eq(currentIdx).fadeIn();
             setTimeout(dispNextSlide, 3000);
             function dispNextSlide() {
                 var nextIdx = currentIdx + 1;
-                if (nextIdx > (slideNum - 1)) {
+                if (nextIdx > slideNum - 1) {
                     nextIdx = 0;
                 }
-                $(".instagramContents .instagramPost").eq(currentIdx).fadeOut(function () {
-                    $(".instagramContents .instagramPost").eq(nextIdx).fadeIn(function () {
+                $('.instagramContents .instagramPost')
+                    .eq(currentIdx)
+                    .fadeOut(function () {
+                    $('.instagramContents .instagramPost')
+                        .eq(nextIdx)
+                        .fadeIn(function () {
                         setTimeout(dispNextSlide, 2000);
                     });
                 });
@@ -334,13 +369,15 @@ const instagramContents = document.querySelector('.instagramContents');
 const instagramPosts = document.querySelectorAll('.instagramPost');
 // instagram-Post img要素を取得し、型をNodeListOf<HTMLElement>として明示的に指定
 const instagramImgs = document.querySelectorAll('.instagramPost img');
-const instagramImg = instagramImgs[0];
-const height = instagramImg.offsetHeight;
-console.log(`height: ${height}px`);
-instagramContents.style.paddingBottom = `${height}px`;
-instagramPosts.forEach(element => {
-    element.style.display = `none`;
-});
+setTimeout(() => {
+    const instagramImg = instagramImgs[0];
+    const height = instagramImg.offsetHeight;
+    // console.log(`height: ${height}px`);
+    instagramContents.style.paddingBottom = `${height}px`;
+    instagramPosts.forEach((element) => {
+        element.style.display = `none`;
+    });
+}, 500);
 // ------------------------------------------------------------
 // instagramの投稿を埋め込み式とする場合
 // $(function() {
@@ -414,13 +451,14 @@ instagramPosts.forEach(element => {
 //   }, 100); // 100ミリ秒ごとにチェック
 // });
 // ------------------------------------------------------------
-// class="contents1"のp要素を取得
+// class="contents3"のp要素を取得
+let contents3OfP;
 window.addEventListener('scroll', () => {
-    contents3P.style.transition = 'opacity 3s'; // 3秒のトランジションを追加
-    const topOfImg = contents3P.offsetTop;
+    contents3P.style.transition = 'opacity 2s'; // 3秒のトランジションを追加
+    contents3OfP = contents3P.offsetTop;
     // console.log('topOfImg: ' + topOfImg);
     const triggerPoint = window.innerHeight - window.innerHeight / 10;
-    if (window.scrollY + triggerPoint >= topOfImg) {
+    if (window.scrollY + triggerPoint >= contents3OfP) {
         contents3P.style.opacity = '1';
     }
 });
