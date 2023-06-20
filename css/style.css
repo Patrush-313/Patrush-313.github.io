@@ -1,6 +1,6 @@
 /* パソコン用 */
 @media screen and (min-width: 769px) {
-  body {
+  /* body {
     font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝',
       'MS PMincho', serif;
     width: auto;
@@ -15,11 +15,87 @@
 
   p {
     letter-spacing: 1.5px;
+  } */
+
+  /* PC/タブレット非対応 */
+  header{
+    display: none;
   }
 
+  .top{
+    display: none;
+  }
+
+  .contents1{
+    display: none;
+  }
+
+  .contents2{
+    display: none;
+  }
+
+  .contents3{
+    display: none;
+  }
+
+  .contentsFin{
+    display: none;
+  }
+
+  .other{
+    display: none;
+  }
+
+  footer{
+    display: none;
+  }
+
+  body{
+    margin: 0;
+  }
+
+  main{
+    height: 100vh;
+  }
+  
+  .sorryMessage{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .sorryMessage [src*='storeIcon1'] {
+    margin-top: 10vh;
+    width: 64px;
+    margin-bottom: 18px;
+  }
+  
+  .sorryMessage [src*='storeIcon2'] {
+    width: 64px;
+    margin-bottom: 18px;
+  }
+  
+  .sorryMessage p{
+    font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝',
+      'MS PMincho', serif;
+    margin-bottom: 10vh;
+    font-size: large;
+  }
+  
+  .sorryMessage h1{
+    font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝',
+      'MS PMincho', serif;
+    margin: 0;
+  }
+  
+
   /* header */
+
   /* sidebar */
-  .sidebar {
+  /* .sidebar {
     position: fixed;
     top: 10px;
     left: 10px;
@@ -36,15 +112,15 @@
     color: white;
     background: none;
     font-size: 120px;
-  }
+  } */
 
   /* main */
-  main {
+  /* main {
     text-align: center;
-  }
+  } */
 
   /* top */
-  .top {
+  /* .top {
     height: 100vh;
     width: 100vh;
     margin-top: 120px;
@@ -76,10 +152,10 @@
   .top p {
     font-size: 18px;
     font-weight: 1;
-  }
+  } */
 
   /* contents */
-  .contents {
+  /* .contents {
     margin-top: 240px;
     width: 84%;
     right: 0px;
@@ -102,11 +178,10 @@
     margin: 40px 15px;
     width: 50vw;
     height: auto;
-  }
+  } */
 
   /* contents_fin */
-
-  .contentsFin {
+  /* .contentsFin {
     margin-top: 120px;
     display: flex;
     flex-direction: column;
@@ -133,10 +208,10 @@
     width: 24px;
     height: 24px;
     margin: 0 12px;
-  }
+  } */
 
   /* footer */
-  footer {
+  /* footer {
     margin-top: 60px;
     text-align: center;
   }
@@ -169,12 +244,84 @@
     font-size: 8px;
     color: lightgray;
     line-height: 1.5;
-  }
+  } */
 }
 
 /* タブレット用 */
 @media only screen and (min-width: 641px) and (max-width: 960px) {
-  /*ここに通常のCSSを入れる*/
+  /* PC/タブレット非対応 */
+  header{
+    display: none;
+  }
+
+  .top{
+    display: none;
+  }
+
+  .contents1{
+    display: none;
+  }
+
+  .contents2{
+    display: none;
+  }
+
+  .contents3{
+    display: none;
+  }
+
+  .contentsFin{
+    display: none;
+  }
+
+  .other{
+    display: none;
+  }
+
+  footer{
+    display: none;
+  }
+
+  body{
+    margin: 0;
+  }
+
+  main{
+    height: 100vh;
+  }
+  
+  .sorryMessage{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .sorryMessage [src*='storeIcon1'] {
+    margin-top: 25vh;
+    width: 64px;
+    margin-bottom: 18px;
+  }
+  
+  .sorryMessage [src*='storeIcon2'] {
+    width: 64px;
+    margin-bottom: 18px;
+  }
+  
+  .sorryMessage p{
+    font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝',
+      'MS PMincho', serif;
+    margin-bottom: 10vh;
+    font-size: large;
+  }
+  
+  .sorryMessage h1{
+    font-family: 'ヒラギノ明朝 Pro W3', 'Hiragino Mincho Pro', 'ＭＳ Ｐ明朝',
+      'MS PMincho', serif;
+    margin: 0;
+  }
 }
 
 /* スマートフォン用 */
@@ -241,24 +388,6 @@
   }
 
   .sidebar [type='button1'] {
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 0;
-    margin: 0;
-    padding: 0;
-    padding-bottom: 100vh;
-    font-size: 50px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: lighter;
-    border: none;
-    color: grey;
-    background: none;
-  }
-
-  .sidebar [type='button2'] {
-    display: none;
     position: absolute;
     width: 100%;
     left: 0;
@@ -411,6 +540,10 @@
     margin: 0.3em 0;
   }
 
+  .sorryMessage{
+    display: none;
+  }
+
   /* top */
   .top {
     height: 100vh;
@@ -507,27 +640,25 @@
     width: 100%;
   }
 
-  .subContents [class^='subContentsSpan'] {
-    text-align: center;
-    width: 12px;
-    color: rgb(149, 149, 149);
-    line-height: 1;
-    padding: 0 0.4em 0 0.4em;
+  .subContentsSpans{
+    margin: 0;
+  }
+
+  [class^='subContentsSpan'] {
+    width: 13px;
+    margin: 0;
   }
   
   [class^='subContentsSpan'] p {
     font-size: 11px;
-    writing-mode: vertical-lr;
+    margin: 0;
     transform: rotate(90deg);
+    width: 13px;
   }
 
   [class^='subContentsImg'] [src*='shopView'] {
     height: 60vh;
-  }
-
-  .subContentsCount {
-    margin: 0 0 8% 5%;
-    text-align: start;
+    object-fit: cover;
   }
 
   .contents2_p p {

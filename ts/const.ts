@@ -1,6 +1,7 @@
 export const sidebar: HTMLElement | null = document.querySelector('.sidebar');
 export const sideBarMask: HTMLElement | null =
-  document.querySelector('.sideBarMask');
+document.querySelector('.sideBarMask');
+export const button = document.querySelector<HTMLButtonElement>('button[type="button1"]');
 export const siteMenuContents: HTMLElement | null = document.querySelector('.siteMenuContents');
 export const siteMenuMask: HTMLElement | null =
   document.querySelector('.siteMenuMask');

@@ -1,5 +1,4 @@
-import { sidebar, sideBarMask, topImage, siteMenuMask, siteMenuContents, shopNameP, contents1H1, contents1Img1, contents2Img1, contents3Img1, contents1P, contents2P, contents3P, contents2H1, contents3H1, contents1Window, } from './const.js';
-// import * as $ from 'jquery';
+import { sidebar, sideBarMask, button, topImage, siteMenuMask, siteMenuContents, shopNameP, contents1H1, contents1Img1, contents2Img1, contents3Img1, contents1P, contents2P, contents3P, contents2H1, contents3H1, contents1Window, } from './const.js';
 console.log('Hello, TypeScript!');
 // ------------------------------------------------------------
 // // ページがリロードされたときの処理
@@ -37,6 +36,7 @@ sidebar.addEventListener('click', () => {
         // console.log('siteMenuを表示する');
         siteMenuMask.style.opacity = '1';
         siteMenuContents.style.opacity = '1';
+        button.textContent = '×';
         siteMenuMask.style.left = '0';
         siteMenuContents.style.left = '0';
     }
@@ -45,12 +45,14 @@ sidebar.addEventListener('click', () => {
         // console.log('siteMenuを非表示にする');
         siteMenuMask.style.opacity = '0';
         siteMenuContents.style.opacity = '0';
+        button.textContent = '≡';
         siteMenuMask.style.left = '-100%';
         siteMenuContents.style.left = '-100%';
     }
     //変化のアニメーションは1秒かける
     siteMenuMask.style.transition = 'all 1s';
     siteMenuContents.style.transition = 'all 1s';
+    button.style.transition = '1s';
 });
 // ------------------------------------------------------------
 // topのbackground-imageを左右に動かす
@@ -231,7 +233,23 @@ window.addEventListener('scroll', () => {
     }
 });
 // ------------------------------------------------------------
-// class="contents1"のp要素を取得
+$(function () {
+    $(".subContentsSpans").slick({
+        autoplay: true,
+        dots: false,
+        fade: true,
+    });
+});
+// ------------------------------------------------------------
+$(function () {
+    $(".subContentsImgs").slick({
+        autoplay: true,
+        dots: true,
+        fade: true,
+    });
+});
+// ------------------------------------------------------------
+// class="contents2"のp要素を取得
 let contents2OfP;
 window.addEventListener('scroll', () => {
     contents2P.style.transition = 'opacity 2s'; // 3秒のトランジションを追加
